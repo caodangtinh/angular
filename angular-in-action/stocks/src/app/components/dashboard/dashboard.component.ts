@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.stockService.load(this.symbols).subscribe(stocks => {
       this.stocks = stocks;
-    })
+    });
   }
 
 }
