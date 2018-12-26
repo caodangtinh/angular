@@ -1,48 +1,21 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-metric',
   templateUrl: './metric.component.html',
-  styleUrls: ['./metric.component.css']
+  styleUrls: ['./metric.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MetricComponent implements OnInit {
+export class MetricComponent implements OnChanges {
+  @Input('used') value: number = 0;
+  @Input('available') max: number = 100;
 
-  @Input('title') title = '';
-  @Input('description') description = '';
-
-  private _value = 0;
-  @Input('used')
-  set value(aValue: number) {
-    if (isNaN(aValue)) {
-      this._value = 0;
-    }
-    this._value = aValue;
+  ngOnChanges(changes) {
+    if (changes.value && isNaN(changes.value.currentValue)) this.value = 0;
+    if (changes.max && isNaN(changes.max.currentValue)) this.max = 0;
   }
 
-  get value() {
-    return this._value;
+  isDanger() {
+    return this.value / this.max > 0.7;
   }
-
-  private _max = 0;
-  @Input('available')
-  set max(aMax: number) {
-    if (isNaN(aMax)) {
-      this._max = 0;
-    }
-    this._max = aMax;
-  }
-
-  get max() {
-    return this._max;
-  }
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-  isDanger(): boolean {
-    return (this.value / this.max) > 0.7;
-  }
-
 }

@@ -10,7 +10,6 @@ export class NodesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
   }
 
 }

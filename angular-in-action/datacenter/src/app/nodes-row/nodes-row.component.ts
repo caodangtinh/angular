@@ -1,21 +1,24 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Node } from '../model/node';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NodesDetailComponent } from '../nodes-detail/nodes-detail.component';
 
 @Component({
   selector: '[app-nodes-row]',
   templateUrl: './nodes-row.component.html',
-  styleUrls: ['./nodes-row.component.css']
+  styleUrls: ['./nodes-row.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NodesRowComponent implements OnInit {
+export class NodesRowComponent {
+  @Input() node: any;
 
-  @Input('node') node: Node;
-  constructor() { }
+  constructor(private modalService: NgbModal) {}
 
-  ngOnInit() {
-  }
-
-  isDanger(prop: string): boolean {
+  isDanger(prop) {
     return this.node[prop].used / this.node[prop].available > 0.7;
   }
 
+  open(node) {
+    const modal = this.modalService.open(NodesDetailComponent);
+    modal.componentInstance.node = node;
+  }
 }
