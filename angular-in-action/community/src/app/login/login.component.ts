@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Query } from '@angular/core';
+import { UserService } from '../services/user.service';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,30 @@ export class LoginComponent implements OnInit {
   password: string = '';
   return: string = '';
 
-  ngOnInit() {}
+  constructor(
+    private userService: UserService,
+    private router: Router,
+    private route: ActivatedRoute) {
 
-  login() {}
+  }
+
+  ngOnInit() {
+    this.route.params.subscribe((params: Query) => {
+      this.return = params['return'] || '/forums';
+      if (!this.userService.isGuest()) {
+        this.go();
+      }
+    });
+  }
+
+  login() {
+    if (this.username && this.password) {
+      this.userService.login(this.username);
+      this.go();
+    }
+  }
+
+  go(): void {
+    this.router.navigateByUrl(this.return);
+  }
 }

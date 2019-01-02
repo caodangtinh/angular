@@ -12,10 +12,10 @@
     </div>
     <div class="header-actions">
       <a class="nav-link nav-icon">
-        <clr-icon shape="talk-bubbles"></clr-icon>
+        <clr-icon shape="talk-bubbles" [routerLink]="[{outlets: { chat: ['users']}}]"></clr-icon>
       </a>
       <a class="nav-link nav-icon">
-        <clr-icon shape="logout"></clr-icon>
+        <clr-icon shape="logout" (click)="logout()" *ngIf="!userService.isGuest()"></clr-icon>
       </a>
     </div>
   </header>
@@ -25,3 +25,5 @@
     </div>
   </div>
 </clr-main-container>
+
+<router-outlet name="chat"></router-outlet>
