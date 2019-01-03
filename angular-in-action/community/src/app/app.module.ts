@@ -13,6 +13,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { UserService } from './services/user.service';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardService } from './services/auth-guard.service';
+import { BlogsModule } from './blogs/blogs.module';
 
 const appRoutes: Routes = [
   {
@@ -39,10 +40,6 @@ const appRoutes: Routes = [
     component: ChatComponent,
     outlet: 'chat',
     canActivate: [AuthGuardService]
-  },
-  {
-    path: 'blogs',
-    loadChildren: 'app/blogs/blogs.module#BlogsModule'
   }
 ];
 
@@ -60,6 +57,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     ClarityModule.forRoot(),
     ForumsModule,
+    BlogsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
