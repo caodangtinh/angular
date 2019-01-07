@@ -12,13 +12,17 @@ import { SummaryComponent } from './components/summary/summary.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ManageComponent } from './components/manage/manage.component';
 import { AppRoutes } from './app.routes';
+import { CardTypeDirective } from './directives/card-type.directive';
+import { CardHoverDirective } from './directives/card-hover.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     SummaryComponent,
     DashboardComponent,
-    ManageComponent
+    ManageComponent,
+    CardTypeDirective,
+    CardHoverDirective
   ],
   imports: [
     BrowserModule,
@@ -28,8 +32,8 @@ import { AppRoutes } from './app.routes';
     AppRoutes
   ],
   providers: [
-    StocksService, 
-    CurrencyPipe, 
+    StocksService,
+    CurrencyPipe,
     PercentPipe
   ],
   bootstrap: [AppComponent]

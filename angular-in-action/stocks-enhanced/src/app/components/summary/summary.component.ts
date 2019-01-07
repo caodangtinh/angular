@@ -7,30 +7,14 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   templateUrl: './summary.component.html',
   animations: [
     trigger('fadeIn', [
-      state('in', style({opacity: 1})),
+      state('in', style({ opacity: 1 })),
       transition(':enter', [
-        style({opacity: 0}),
-        animate(300)
+        style({ opacity: 0 }),
+        animate(2000)
       ])
     ])
   ]
 })
 export class SummaryComponent {
   @Input() stock: any;
-
-  isNegative() {
-    if (!this.stock || this.stock.change >= 0) {
-      return false;
-    }
-
-    return true;
-  }
-
-  isPositive() {
-    if (!this.stock || this.stock.change <= 0) {
-      return false;
-    }
-
-    return true;
-  }
 }
