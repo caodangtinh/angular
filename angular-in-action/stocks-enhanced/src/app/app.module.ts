@@ -14,6 +14,9 @@ import { ManageComponent } from './components/manage/manage.component';
 import { AppRoutes } from './app.routes';
 import { CardTypeDirective } from './directives/card-type.directive';
 import { CardHoverDirective } from './directives/card-hover.directive';
+import { ChangePipe } from './pipes/change.pipe';
+import { NewsPipe } from './pipes/news.pipe';
+import { ChangeDetectorPipe } from './pipes/change-detector.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { CardHoverDirective } from './directives/card-hover.directive';
     DashboardComponent,
     ManageComponent,
     CardTypeDirective,
-    CardHoverDirective
+    CardHoverDirective,
+    ChangePipe,
+    NewsPipe,
+    ChangeDetectorPipe
   ],
   imports: [
     BrowserModule,
