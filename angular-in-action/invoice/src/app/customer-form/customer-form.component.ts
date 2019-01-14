@@ -46,8 +46,7 @@ export class CustomerFormComponent implements OnInit {
     }
   }
 
-  delete() {
-    this.dialogService.openConfirm({
+  delete() {    this.dialogService.openConfirm({
       message: 'Are you sure you want to delete this customer?',
       title: 'Confirm',
       acceptButton: 'Delete'

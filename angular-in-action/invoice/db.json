@@ -1,18 +1,6 @@
 {
   "customers": [
     {
-      "id": 1,
-      "name": "Linklinks",
-      "email": "mscoon0@hibu.com",
-      "phone": "(970)426-1402"
-    },
-    {
-      "id": 2,
-      "name": "Edgepulse",
-      "email": "abambury1@bloglines.com",
-      "phone": "(458)689-8817"
-    },
-    {
       "id": 3,
       "name": "Skipfire",
       "email": "lgreenhill2@europa.eu",
@@ -133,15 +121,6 @@
       "hours": 69,
       "rate": 75,
       "paid": false
-    },
-    {
-      "id": 5,
-      "customerId": 2,
-      "date": "2017-03-27T13:44:43Z",
-      "service": "FM/2",
-      "hours": 32,
-      "rate": 75,
-      "paid": true
     },
     {
       "id": 6,
@@ -369,24 +348,6 @@
       "paid": false
     },
     {
-      "id": 32,
-      "customerId": 2,
-      "date": "2017-04-24T19:16:37Z",
-      "service": "NMLS",
-      "hours": 48,
-      "rate": 75,
-      "paid": true
-    },
-    {
-      "id": 33,
-      "customerId": 1,
-      "date": "2017-04-12T10:20:53Z",
-      "service": "VSP 4",
-      "hours": 6,
-      "rate": 25,
-      "paid": true
-    },
-    {
       "id": 35,
       "customerId": 20,
       "date": "2017-03-12T02:02:30Z",
@@ -402,33 +363,6 @@
       "service": "Navigation",
       "hours": 92,
       "rate": 100,
-      "paid": true
-    },
-    {
-      "id": 37,
-      "customerId": 2,
-      "date": "2016-12-02T02:42:37Z",
-      "service": "MIS",
-      "hours": 19,
-      "rate": 25,
-      "paid": false
-    },
-    {
-      "id": 38,
-      "customerId": 1,
-      "date": "2017-03-21T14:50:20Z",
-      "service": "GNU Debugger",
-      "hours": 58,
-      "rate": 75,
-      "paid": true
-    },
-    {
-      "id": 39,
-      "customerId": 1,
-      "date": "2017-01-04T21:54:05Z",
-      "service": "Hybrid Cloud",
-      "hours": 12,
-      "rate": 75,
       "paid": true
     },
     {
@@ -477,15 +411,6 @@
       "paid": false
     },
     {
-      "id": 45,
-      "customerId": 2,
-      "date": "2017-03-03T03:04:21Z",
-      "service": "USB",
-      "hours": 82,
-      "rate": 25,
-      "paid": true
-    },
-    {
       "id": 46,
       "customerId": 4,
       "date": "2017-01-31T14:08:04Z",
@@ -511,15 +436,6 @@
       "hours": 77,
       "rate": 75,
       "paid": true
-    },
-    {
-      "id": 49,
-      "customerId": 1,
-      "date": "2017-02-03T02:52:02Z",
-      "service": "Cycling",
-      "hours": 27,
-      "rate": 25,
-      "paid": false
     },
     {
       "id": 50,
